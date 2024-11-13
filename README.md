@@ -66,7 +66,7 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
   
   Kembalian Anda: Rp2000
 
-### Mengurangi Stok dan Menyimpan Perubahan
+#### Mengurangi Stok dan Menyimpan Perubahan
 
 9. Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli.
 10. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
@@ -76,7 +76,7 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
   Anda telah membeli Aqua. Terima kasih atas pembelian Anda!
   
 
-### Memilih untuk Melanjutkan atau Mengakhiri Pembelian
+#### Memilih untuk Melanjutkan atau Mengakhiri Pembelian
 
 11. *Prompt Melanjutkan Pembelian*:
    - Setelah pembelian, program akan menanyakan apakah Anda ingin membeli barang lain.
