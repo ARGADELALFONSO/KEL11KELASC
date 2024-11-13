@@ -18,8 +18,6 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
 - Melanjutkan atau Mengakhiri Pembelian   : setelah setiap pembelian, pengguna akan diberikan opsi untuk melanjutkan membeli barang lain atau mengakhiri transaksi.
 
 ## Cara Menggunakan 
-# Langkah 1: Menjalankan Program
-
 1. Persiapkan File Excel dan Program Python:
    - Pastikan Anda sudah memiliki file Excel bernama Vending_Machine_Inventory_Contoh.xlsx yang berisi data barang, harga, dan stok.
    - Simpan file Excel ini di folder yang sama dengan file Python (vending_machine.py) atau sesuaikan path file di dalam kode jika file Excel berada di lokasi berbeda.
@@ -29,29 +27,20 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
    - Jalankan program dengan perintah berikut:
      bash
      python vending_machine.py
-     
-   - Jika Anda menggunakan IDE seperti PyCharm atau VS Code, Anda juga bisa langsung menekan tombol Run.
 
-# Langkah 2: Menampilkan Daftar Barang
-
-- Setelah program dijalankan, daftar barang akan otomatis muncul di layar. Setiap barang akan dilengkapi informasi harga per unit dan stok yang masih tersedia.
-  
+3. Setelah program dijalankan, daftar barang akan otomatis muncul di layar. Setiap barang akan dilengkapi informasi harga per unit dan stok yang masih tersedia.
   *Contoh Tampilan di Console*:
-  
   Daftar Barang di Mesin Penjual Otomatis:
   Aqua - Harga: Rp5000 | Stok: 10
   Chips - Harga: Rp7000 | Stok: 5
   Soda - Harga: Rp8000 | Stok: 8
   Coklat - Harga: Rp10000 | Stok: 3
-  
 
-# Langkah 3: Memilih Barang
-
-1. *Masukkan Nama Barang*:
+4. *input Nama Barang*:
    - Setelah daftar barang ditampilkan, Anda akan diminta untuk memasukkan nama barang yang ingin dibeli.
-   - Ketik nama barang (misalnya, "Aqua") dan tekan Enter.
+   - Ketik nama barang (misalnya, "Aqua").
 
-2. *Cek Ketersediaan Barang*:
+5. *Cek Ketersediaan Barang*:
    - Program akan memeriksa apakah barang yang Anda pilih tersedia dalam stok. 
    - Jika stok barang habis, program akan memberi tahu Anda dan kembali ke daftar barang untuk memilih barang lain.
 
@@ -59,44 +48,37 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
    
    Maaf, barang tidak tersedia atau stok habis.
    
-
-# Langkah 4: Memasukkan Jumlah Uang
-
-1. *Input Jumlah Uang*:
+6. *Input Jumlah Uang*:
    - Jika barang tersedia, Anda akan diminta memasukkan jumlah uang yang Anda miliki.
    - Ketik jumlah uang dan tekan Enter.
 
-2. *Cek Kecukupan Uang*:
+7. *Cek Kecukupan Uang*:
    - Program akan membandingkan jumlah uang yang Anda masukkan dengan harga barang.
-   - Jika uang yang dimasukkan kurang dari harga barang, program akan menampilkan pesan “Uang tidak cukup” dan membatalkan transaksi. Anda bisa memilih barang lain.
+   - Jika uang yang dimasukkan kurang dari harga barang, program akan menampilkan pesan “Uang tidak cukup” dan membatalkan transaksi serta Anda bisa memilih barang lain.
 
    *Contoh Pesan Jika Uang Tidak Cukup*:
    
    Uang tidak cukup. Transaksi dibatalkan.
    
-
-# Langkah 5: Menerima Kembalian (Jika Ada)
-
-- Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
+8.Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
   
   *Contoh Pesan Kembalian*:
   
   Kembalian Anda: Rp2000
-  
 
-# Langkah 6: Mengurangi Stok dan Menyimpan Perubahan
+# Mengurangi Stok dan Menyimpan Perubahan
 
-- Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli.
-- Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
+9. Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli.
+10. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
 
   *Contoh Pesan Konfirmasi Pembelian*:
   
   Anda telah membeli Aqua. Terima kasih atas pembelian Anda!
   
 
-# Langkah 7: Memilih untuk Melanjutkan atau Mengakhiri Pembelian
+# Memilih untuk Melanjutkan atau Mengakhiri Pembelian
 
-1. *Prompt Melanjutkan Pembelian*:
+11. *Prompt Melanjutkan Pembelian*:
    - Setelah pembelian, program akan menanyakan apakah Anda ingin membeli barang lain.
    - Jika Anda mengetik y, program akan kembali menampilkan daftar barang untuk pembelian baru.
    - Jika Anda mengetik n, program akan menampilkan pesan penutup dan berhenti.
@@ -105,10 +87,7 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
    
    Apakah ingin membeli barang lain? (y/n): 
    
-
-# Langkah 8: Mengakhiri Program
-
-- Jika Anda memilih untuk mengakhiri pembelian dengan mengetik n, program akan menampilkan pesan "Terima kasih telah menggunakan mesin penjual otomatis" dan selesai.
+12. Jika Anda memilih untuk mengakhiri pembelian dengan mengetik n, program akan menampilkan pesan "Terima kasih telah menggunakan mesin penjual otomatis" dan selesai.
 
   *Pesan Penutup*:
   
