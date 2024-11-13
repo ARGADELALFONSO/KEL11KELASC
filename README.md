@@ -60,7 +60,7 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
    
    Uang tidak cukup. Transaksi dibatalkan.
    
-8.Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
+8. Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
   
   *Contoh Pesan Kembalian*:
   
@@ -68,12 +68,12 @@ Buat simulasi mesin penjual otomatis di console di mana pengguna dapat memilih b
 
 #### Mengurangi Stok dan Menyimpan Perubahan
 
-9. Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli.
+9.  Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli.
 10. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
 
   *Contoh Pesan Konfirmasi Pembelian*:
   
-  Anda telah membeli Aqua. Terima kasih atas pembelian Anda!
+   Anda telah membeli Aqua. Terima kasih atas pembelian Anda!
   
 
 #### Memilih untuk Melanjutkan atau Mengakhiri Pembelian
