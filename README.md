@@ -1,5 +1,5 @@
-## Kelas      :
-## Kelompok   : 
+## Kelas      : C
+## Kelompok   : 11
 ## Anggota    :
 -  I0324097 RADITYA YEFTA SYALLOM
 -  I0324112 ARGA DEL ALFONSO N.
