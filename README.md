@@ -7,7 +7,7 @@
 
 
 ## Deskripsi
-Buat simulasi mesin penjual otomatis di desktop di mana pengguna dapat memilih barang, membayar, dan menerima kembalian. Tambahkan juga stok barang yang bisa habis. Tujuan: Memahami konsep perulangan, logika percabangan, pengelolaan variabel dan kondisi, serta kalkulasi sederhana
+Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna dapat memilih barang, membayar, dan menerima kembalian. Tambahkan juga stok barang yang jika habis, namun untuk menambahkannya khusus admin selain itu juga admin dapat melihat riwayat pembelian sebelum-sebelumnya. Tujuan: Memahami konsep perulangan, logika percabangan, pengelolaan variabel dan kondisi, serta kalkulasi sederhana
 
 ## Fitur
 - Menampilkan Daftar Barang               : menampilkan daftar barang yang tersedia di vending machine, lengkap dengan harga dan stok yang masih ada.
