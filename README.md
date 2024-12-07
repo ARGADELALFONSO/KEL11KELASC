@@ -7,21 +7,25 @@
 
 
 ## Deskripsi
-Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna dapat memilih barang, membayar, dan menerima kembalian. Tambahkan juga stok barang yang jika habis, namun untuk menambahkannya khusus admin selain itu juga admin dapat melihat riwayat pembelian sebelum-sebelumnya. Tujuan: Memahami konsep perulangan, logika percabangan, pengelolaan variabel dan kondisi, serta kalkulasi sederhana
+Ini adalah aplikasi mesin penjual otomatis berbasis PyQt5 yang memungkinkan pelanggan untuk melihat produk, menambahkannya ke keranjang, memproses pembelian, dan melihat riwayat transaksi. Aplikasi ini juga memiliki panel admin untuk mengelola stok produk, harga, dan menambahkan produk baru. Tujuan: Memahami konsep perulangan, logika percabangan, pengelolaan variabel dan kondisi, serta kalkulasi sederhana
 
 ## Fitur
-- Menampilkan Daftar Barang               : menampilkan daftar barang yang tersedia di vending machine, lengkap dengan harga dan stok yang masih ada.
-- Fitur Pemilihan Barang                  : memasukkan nama barang yang ingin dibeli. Program akan memeriksa apakah barang tersedia atau stoknya habis.
-- Input Uang                              : meminta pengguna untuk memasukkan jumlah uang sesuai harga barang yang dipilih.
-- Menu Pembayaran                         : pembeli dapat memilih menu pembayaran pada produk bisa cash maupun ewallet yang tersedia
-- Kembalian                               : jika pembeli membayar cash dan memiliki kembalian maka jumlah kembalian akan muncul
-- Pembaruan Stok dan Penyimpanan ke Excel : setelah transaksi selesai, stok barang yang dibeli akan otomatis dikurangi, dan perubahan ini disimpan langsung ke file Excel.
-- Melanjutkan atau Mengakhiri Pembelian   : setelah setiap pembelian, pengguna akan diberikan opsi untuk melanjutkan membeli barang lain atau mengakhiri transaksi.
-- Admin                                   : di fitur admin ini sebagai admin dapat melihat seperti riwayat transaksi dengan login akun dan password
+## Fitur Pelanggan:
+1.   Menelusuri Produk: Melihat daftar produk yang tersedia, termasuk harga dan stok.
+2.   Menambah ke Keranjang: Menambah produk ke keranjang belanja dan mengatur jumlahnya.
+3.   Memproses Pembelian: Membayar produk dalam keranjang, baik menggunakan uang tunai atau poin loyalitas.
+4.   Melihat Riwayat Transaksi: Melihat riwayat transaksi masa lalu.
+
+## Fitur Admin:
+1.   Memperbarui Stok Produk: Mengubah stok produk yang ada.
+2.   Memperbarui Harga Produk: Menyesuaikan harga produk yang ada.
+3.   Menambahkan Produk Baru: Menambah produk baru ke dalam inventaris mesin penjual otomatis.
+4.   Melihat Riwayat Transaksi: Admin dapat melihat riwayat transaksi lengkap, termasuk nama produk, total, metode 
+     pembayaran, dan kembalian.
 
 ## Cara Menggunakan 
 1. Persiapkan File Excel dan Program Python:
-   - Pastikan Anda sudah memiliki file Excel bernama Vending_Machine_Inventory_Contoh.xlsx yang berisi data barang, harga, dan stok.
+   - Pastikan Anda sudah memiliki file Excel bernama Vending_Machine_Inventory_Contoh.csv yang berisi data barang, harga, dan stok.
    - Simpan file Excel ini di folder yang sama dengan file Python (vending_machine.py) atau sesuaikan path file di dalam kode jika file Excel berada di lokasi berbeda.
 
 2. Buka Terminal atau Command Prompt:
@@ -45,6 +49,7 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
 5. *Input Jumlah Uang*:
    - Jika barang tersedia, Anda akan diminta memasukkan jumlah uang yang Anda miliki.
    - Ketik jumlah uang dan tekan Enter.
+   - 
 
 6. *Cek Kecukupan Uang*:
    - Program akan membandingkan jumlah uang yang Anda masukkan dengan harga barang.
@@ -62,7 +67,7 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
 
 #### Mengurangi Stok dan Menyimpan Perubahan
 
-8.  Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli dengan cara refresh manual.
+8. Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli dengan cara refresh manual.
    
 9. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
 
@@ -71,11 +76,4 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
    Anda telah membeli Aqua. Terima kasih atas pembelian Anda!
   
 
-#### Memilih untuk Melanjutkan atau Mengakhiri Pembelian
 
-
-  *Pesan Penutup*:
-  
-  Terima kasih telah menggunakan mesin penjual otomatis.
-
-Dengan mengikuti langkah-langkah di atas, Anda bisa menjalankan program vending machine ini untuk melakukan transaksi pembelian, menerima kembalian, dan memastikan stok selalu diperbarui di file Excel. Program ini akan terus berjalan hingga Anda memilih untuk berhenti.
