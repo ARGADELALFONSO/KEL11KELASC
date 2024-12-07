@@ -24,56 +24,49 @@ Ini adalah aplikasi mesin penjual otomatis berbasis PyQt5 yang memungkinkan pela
      pembayaran, dan kembalian.
 
 ## Cara Menggunakan 
-1. Persiapkan File Excel dan Program Python:
-   - Pastikan Anda sudah memiliki file Excel bernama Vending_Machine_Inventory_Contoh.csv yang berisi data barang, harga, dan stok.
-   - Simpan file Excel ini di folder yang sama dengan file Python (vending_machine.py) atau sesuaikan path file di dalam kode jika file Excel berada di lokasi berbeda.
+Struktur Umum Program
+Import Library: Program ini mengimpor berbagai modul dari PyQt5 untuk membuat antarmuka pengguna, serta modul csv untuk membaca dan menulis data transaksi.
 
-2. Buka Terminal atau Command Prompt:
-   - Navigasikan ke folder tempat Anda menyimpan file Python dan Excel.
-   - Jalankan program dengan perintah berikut:
-     bash
-     python vending_machine.py
+Kelas AdminLoginDialog: Kelas ini mengatur dialog untuk login admin. Pengguna diminta untuk memasukkan username dan password. Jika berhasil, dialog akan ditutup dan mengizinkan akses ke panel admin.
 
-3. Setelah program dijalankan, daftar barang akan otomatis muncul di layar. Setiap barang akan dilengkapi informasi harga per unit dan stok yang masih tersedia.
-  *Contoh Tampilan di desktop*:
-  Daftar Barang di Mesin Penjual Otomatis:
-  Oreo - Harga: Rp10000 | Stok: 40
-  Tango - Harga: Rp5000 | Stok: 50
-  Kitkat - Harga: Rp12000 | Stok: 50
-  Lays - Harga: Rp15000 | Stok: 20
+Kelas VendingMachineUI: Kelas utama yang mengatur antarmuka pengguna untuk mesin penjual otomatis. Kelas ini berisi berbagai elemen UI seperti tombol produk, tabel keranjang belanja, dan tombol untuk melakukan pembayaran.
 
-4. *input Nama Barang*:
-   - Setelah daftar barang ditampilkan, Anda akan diminta untuk memasukkan nama barang yang ingin dibeli.
-   - Klik nama barang (misalnya, "Aqua").
-   
-5. *Input Jumlah Uang*:
-   - Jika barang tersedia, Anda akan diminta memasukkan jumlah uang yang Anda miliki.
-   - Ketik jumlah uang dan tekan Enter.
-   - 
+Komponen Utama
+Antarmuka Pengguna:
 
-6. *Cek Kecukupan Uang*:
-   - Program akan membandingkan jumlah uang yang Anda masukkan dengan harga barang.
-   - Jika uang yang dimasukkan kurang dari harga barang, program akan menampilkan pesan “Uang tidak cukup” dan membatalkan transaksi serta Anda bisa memilih barang lain.
+Tombol Produk: Setiap produk dalam inventaris ditampilkan sebagai tombol. Ketika tombol ditekan, produk tersebut ditambahkan ke keranjang belanja.
+Tabel Keranjang Belanja: Menampilkan produk yang telah ditambahkan ke keranjang, jumlah, total harga, dan tombol untuk menghapus item dari keranjang.
+Total dan Pembayaran: Menampilkan total harga dari semua item di keranjang dan menyediakan input untuk memasukkan uang serta memilih metode pembayaran.
+Fungsi Login Admin:
 
-   *Contoh Pesan Jika Uang Tidak Cukup*:
-   
-   Uang tidak cukup. Transaksi dibatalkan.
-   
-7. Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
-  
-  *Contoh Pesan Kembalian*:
-  
-  Kembalian Anda: Rp2000
+Ketika tombol "Login Admin" ditekan, dialog login admin muncul. Jika username dan password yang dimasukkan benar, panel admin akan terbuka.
+Panel Admin:
 
-#### Mengurangi Stok dan Menyimpan Perubahan
+Di panel admin, admin dapat menambah produk baru, mengedit stok produk, mengedit harga produk, dan melihat histori transaksi. Setiap fungsi ini membuka dialog baru untuk input data.
+Pengelolaan Produk:
 
-8. Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli dengan cara refresh manual.
-   
-9. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
+Menambah Produk: Admin dapat menambahkan produk baru dengan memasukkan nama, harga, dan stok.
+Mengedit Stok dan Harga: Admin dapat mengubah stok dan harga produk yang sudah ada.
+Histori Transaksi: Admin dapat melihat histori transaksi yang disimpan dalam file CSV.
+Keranjang Belanja:
 
-  *Contoh Pesan Konfirmasi Pembelian*:
-  
-   Anda telah membeli Aqua. Terima kasih atas pembelian Anda!
+Pengguna dapat menambahkan produk ke keranjang, melihat total harga, dan melakukan pembayaran. Setelah pembayaran, transaksi dicatat dan keranjang dibersihkan.
+Proses Pembayaran:
+
+Ketika pengguna melakukan pembayaran, program memeriksa apakah uang yang dimasukkan cukup. Jika cukup, transaksi dicatat, dan pengguna diberi tahu tentang kembalian.
+Alur Kerja Program
+Inisialisasi: Program dimulai dengan inisialisasi kelas VendingMachineUI, yang mempersiapkan antarmuka pengguna dan mengupdate tombol produk berdasarkan inventaris.
+
+Interaksi Pengguna:
+
+Pengguna dapat memilih produk, menambahkannya ke keranjang, dan melakukan pembayaran.
+Admin dapat login untuk mengelola produk dan melihat histori transaksi.
+Penyimpanan Data: Data transaksi disimpan dalam file CSV untuk referensi di masa mendatang.
+
+Refresh UI: Setelah setiap perubahan (seperti menambah produk atau mengedit stok), antarmuka pengguna diperbarui untuk mencerminkan perubahan tersebut.
+
+Kesimpulan
+Program ini adalah aplikasi mesin penjual otomatis yang interaktif, memungkinkan pengguna untuk membeli produk dan admin untuk mengelola inventaris. Dengan menggunakan PyQt5, program ini menyediakan antarmuka pengguna yang ramah dan fungsional, serta menyimpan data transaksi untuk keperluan administrasi.
   
 
 
