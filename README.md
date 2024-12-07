@@ -34,9 +34,10 @@ Kelas VendingMachineUI: Kelas utama yang mengatur antarmuka pengguna untuk mesin
 Komponen Utama
 Antarmuka Pengguna:
 
-Tombol Produk: Setiap produk dalam inventaris ditampilkan sebagai tombol. Ketika tombol ditekan, produk tersebut ditambahkan ke keranjang belanja.
-Tabel Keranjang Belanja: Menampilkan produk yang telah ditambahkan ke keranjang, jumlah, total harga, dan tombol untuk menghapus item dari keranjang.
-Total dan Pembayaran: Menampilkan total harga dari semua item di keranjang dan menyediakan input untuk memasukkan uang serta memilih metode pembayaran.
+1.     Tombol Produk: Setiap produk dalam inventaris ditampilkan sebagai tombol. Ketika tombol ditekan, produk tersebut ditambahkan ke keranjang belanja.
+2.     Tabel Keranjang Belanja: Menampilkan produk yang telah ditambahkan ke keranjang, jumlah, total harga, dan tombol untuk menghapus item dari keranjang.
+3.     Total dan Pembayaran: Menampilkan total harga dari semua item di keranjang dan menyediakan input untuk memasukkan uang serta memilih metode pembayaran.
+
 Fungsi Login Admin:
 
 Ketika tombol "Login Admin" ditekan, dialog login admin muncul. Jika username dan password yang dimasukkan benar, panel admin akan terbuka.
@@ -45,9 +46,9 @@ Panel Admin:
 Di panel admin, admin dapat menambah produk baru, mengedit stok produk, mengedit harga produk, dan melihat histori transaksi. Setiap fungsi ini membuka dialog baru untuk input data.
 Pengelolaan Produk:
 
-Menambah Produk: Admin dapat menambahkan produk baru dengan memasukkan nama, harga, dan stok.
-Mengedit Stok dan Harga: Admin dapat mengubah stok dan harga produk yang sudah ada.
-Histori Transaksi: Admin dapat melihat histori transaksi yang disimpan dalam file CSV.
+1.     Menambah Produk: Admin dapat menambahkan produk baru dengan memasukkan nama, harga, dan stok.
+2.     Mengedit Stok dan Harga: Admin dapat mengubah stok dan harga produk yang sudah ada.
+3.     Histori Transaksi: Admin dapat melihat histori transaksi yang disimpan dalam file CSV.
 Keranjang Belanja:
 
 Pengguna dapat menambahkan produk ke keranjang, melihat total harga, dan melakukan pembayaran. Setelah pembayaran, transaksi dicatat dan keranjang dibersihkan.
@@ -55,15 +56,15 @@ Proses Pembayaran:
 
 Ketika pengguna melakukan pembayaran, program memeriksa apakah uang yang dimasukkan cukup. Jika cukup, transaksi dicatat, dan pengguna diberi tahu tentang kembalian.
 Alur Kerja Program
-Inisialisasi: Program dimulai dengan inisialisasi kelas VendingMachineUI, yang mempersiapkan antarmuka pengguna dan mengupdate tombol produk berdasarkan inventaris.
+- Inisialisasi: Program dimulai dengan inisialisasi kelas VendingMachineUI, yang mempersiapkan antarmuka pengguna dan mengupdate tombol produk berdasarkan inventaris.
 
 Interaksi Pengguna:
 
 Pengguna dapat memilih produk, menambahkannya ke keranjang, dan melakukan pembayaran.
 Admin dapat login untuk mengelola produk dan melihat histori transaksi.
-Penyimpanan Data: Data transaksi disimpan dalam file CSV untuk referensi di masa mendatang.
+- Penyimpanan Data: Data transaksi disimpan dalam file CSV untuk referensi di masa mendatang.
 
-Refresh UI: Setelah setiap perubahan (seperti menambah produk atau mengedit stok), antarmuka pengguna diperbarui untuk mencerminkan perubahan tersebut.
+- Refresh UI: Setelah setiap perubahan (seperti menambah produk atau mengedit stok), antarmuka pengguna diperbarui untuk mencerminkan perubahan tersebut.
 
 Kesimpulan
 Program ini adalah aplikasi mesin penjual otomatis yang interaktif, memungkinkan pengguna untuk membeli produk dan admin untuk mengelola inventaris. Dengan menggunakan PyQt5, program ini menyediakan antarmuka pengguna yang ramah dan fungsional, serta menyimpan data transaksi untuk keperluan administrasi.
