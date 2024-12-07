@@ -31,30 +31,22 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
      python vending_machine.py
 
 3. Setelah program dijalankan, daftar barang akan otomatis muncul di layar. Setiap barang akan dilengkapi informasi harga per unit dan stok yang masih tersedia.
-  *Contoh Tampilan di Console*:
+  *Contoh Tampilan di desktop*:
   Daftar Barang di Mesin Penjual Otomatis:
-  Aqua - Harga: Rp5000 | Stok: 10
-  Chips - Harga: Rp7000 | Stok: 5
-  Soda - Harga: Rp8000 | Stok: 8
-  Coklat - Harga: Rp10000 | Stok: 3
+  Oreo - Harga: Rp10000 | Stok: 40
+  Tango - Harga: Rp5000 | Stok: 50
+  Kitkat - Harga: Rp12000 | Stok: 50
+  Lays - Harga: Rp15000 | Stok: 20
 
 4. *input Nama Barang*:
    - Setelah daftar barang ditampilkan, Anda akan diminta untuk memasukkan nama barang yang ingin dibeli.
-   - Ketik nama barang (misalnya, "Aqua").
-
-5. *Cek Ketersediaan Barang*:
-   - Program akan memeriksa apakah barang yang Anda pilih tersedia dalam stok. 
-   - Jika stok barang habis, program akan memberi tahu Anda dan kembali ke daftar barang untuk memilih barang lain.
-
-   *Contoh Pesan Jika Stok Barang Habis*:
+   - Klik nama barang (misalnya, "Aqua").
    
-   Maaf, barang tidak tersedia atau stok habis.
-   
-6. *Input Jumlah Uang*:
+5. *Input Jumlah Uang*:
    - Jika barang tersedia, Anda akan diminta memasukkan jumlah uang yang Anda miliki.
    - Ketik jumlah uang dan tekan Enter.
 
-7. *Cek Kecukupan Uang*:
+6. *Cek Kecukupan Uang*:
    - Program akan membandingkan jumlah uang yang Anda masukkan dengan harga barang.
    - Jika uang yang dimasukkan kurang dari harga barang, program akan menampilkan pesan “Uang tidak cukup” dan membatalkan transaksi serta Anda bisa memilih barang lain.
 
@@ -62,7 +54,7 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
    
    Uang tidak cukup. Transaksi dibatalkan.
    
-8. Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
+7. Jika uang yang Anda masukkan lebih dari harga barang, program akan menghitung dan memberikan kembalian.
   
   *Contoh Pesan Kembalian*:
   
@@ -70,8 +62,9 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
 
 #### Mengurangi Stok dan Menyimpan Perubahan
 
-9.  Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli.
-10. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
+8.  Setelah pembelian berhasil, program akan mengurangi stok barang yang dibeli dengan cara refresh manual.
+   
+9. Stok baru akan langsung diperbarui di file Excel, sehingga data barang dan stok selalu akurat.
 
   *Contoh Pesan Konfirmasi Pembelian*:
   
@@ -80,16 +73,6 @@ Buat simulasi mesin penjual otomatis/vending machine di desktop di mana pengguna
 
 #### Memilih untuk Melanjutkan atau Mengakhiri Pembelian
 
-11. *Prompt Melanjutkan Pembelian*:
-   - Setelah pembelian, program akan menanyakan apakah Anda ingin membeli barang lain.
-   - Jika Anda mengetik y, program akan kembali menampilkan daftar barang untuk pembelian baru.
-   - Jika Anda mengetik n, program akan menampilkan pesan penutup dan berhenti.
-
-   *Contoh Prompt*:
-   
-   Apakah ingin membeli barang lain? (y/n): 
-   
-12. Jika Anda memilih untuk mengakhiri pembelian dengan mengetik n, program akan menampilkan pesan "Terima kasih telah menggunakan mesin penjual otomatis" dan selesai.
 
   *Pesan Penutup*:
   
