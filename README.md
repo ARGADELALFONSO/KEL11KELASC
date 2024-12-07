@@ -23,6 +23,9 @@ Ini adalah aplikasi mesin penjual otomatis berbasis PyQt5 yang memungkinkan pela
 4.   Melihat Riwayat Transaksi: Admin dapat melihat riwayat transaksi lengkap, termasuk nama produk, total, metode 
      pembayaran, dan kembalian.
 
+## Flow Chart Aplikasi Mesin Penjual Otomatis
+![FlowChart drawio](https://github.com/user-attachments/assets/29a15681-b9a1-445c-a05b-074c110b93d8)
+
 ## Cara Menggunakan 
 Struktur Umum Program
 Import Library: Program ini mengimpor berbagai modul dari PyQt5 untuk membuat antarmuka pengguna, serta modul csv untuk membaca dan menulis data transaksi.
