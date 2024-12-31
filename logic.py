@@ -1,4 +1,5 @@
 import csv
+from datetime import datetime
 
 class VendingMachineLogic:
     def __init__(self, inventory_file="inventory.csv", transactions_file="transactions.csv"):
@@ -67,11 +68,12 @@ class VendingMachineLogic:
 
     def record_transaction(self, total_price, paid_amount, change, payment_method):
         """Mencatat transaksi ke dalam file CSV"""
+        transaction_date = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         with open(self.transactions_file, 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([
                 ', '.join([item['Nama'] for item in self.cart]),
-                total_price, paid_amount, change, payment_method
+                total_price, paid_amount, change, payment_method, transaction_date
             ])
 
     def clear_cart(self):
