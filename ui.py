@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPalette, QColor
 import csv
+from datetime import datetime, timedelta
 
 class AdminLoginDialog(QDialog):
     def __init__(self, parent=None):
@@ -206,13 +207,18 @@ class VendingMachineUI(QWidget):
         history_dialog.setFixedSize(600, 400)
 
         layout = QVBoxLayout()
-
+        
+        # Menambahkan opsi rentang waktu
+        period_combo = QComboBox()
+        period_combo.addItems(["Semua", "Harian", "Mingguan", "Bulanan"])
+        layout.addWidget(period_combo)
+        
         # Membaca transaksi dari file CSV
         transactions = self.read_transactions_from_csv()
 
         history_table = QTableWidget()
-        history_table.setColumnCount(5)
-        history_table.setHorizontalHeaderLabels(["Nama", "Total", "Pembayaran", "Kembalian", "Metode"])
+        history_table.setColumnCount(6)
+        history_table.setHorizontalHeaderLabels(["Nama", "Total", "Pembayaran", "Kembalian", "Metode", "Tanggal"])
         history_table.setRowCount(len(transactions))
 
         # Custom table styling
@@ -243,31 +249,64 @@ class VendingMachineUI(QWidget):
             history_table.setItem(i, 2, QTableWidgetItem(str(transaction["Pembayaran"])))
             history_table.setItem(i, 3, QTableWidgetItem(str(transaction["Kembalian"])))
             history_table.setItem(i, 4, QTableWidgetItem(transaction["Metode"]))
-
+            history_table.setItem(i, 5, QTableWidgetItem(transaction["Tanggal"].strftime("%Y-%m-%d %H:%M:%S")))
+        
         layout.addWidget(history_table)
-        back_button = QPushButton("Kembali")
-        back_button.clicked.connect(history_dialog.reject)
-        layout.addWidget(back_button)
+        
+        close_button = QPushButton("Tutup")
+        close_button.clicked.connect(history_dialog.close)
+        layout.addWidget(close_button)
         
         history_dialog.setLayout(layout)
         history_dialog.exec_()
 
-    def read_transactions_from_csv(self):
+    def read_transactions_from_csv(self, period=None):
         transactions = []
         try:
             with open('transactions.csv', mode='r') as file:
-                reader = csv.reader(file)  # Gunakan csv.reader untuk file tanpa header
+                reader = csv.reader(file)
                 for row in reader:
-                    if len(row) == 5:  # Pastikan format CSV benar
-                        transactions.append({
-                            "Nama": row[0],
-                            "Total": int(row[1]),
-                            "Pembayaran": int(row[2]),
-                            "Kembalian": int(row[3]),
-                            "Metode": row[4]
+                    if len(row) == 6:  # Pastikan format CSV benar (termasuk tanggal)
+                        transaction_date = datetime.strptime(row[5], "%Y-%m-%d %H:%M:%S")
+                        if period == "daily" and transaction_date.date() == datetime.today().date():
+                            transactions.append({
+                                "Nama": row[0],
+                                "Total": int(row[1]),
+                                "Pembayaran": int(row[2]),
+                                "Kembalian": int(row[3]),
+                                "Metode": row[4],
+                                "Tanggal": transaction_date
                         })
+                        elif period == "weekly" and transaction_date >= datetime.today() - timedelta(days=7):
+                            transactions.append({
+                                "Nama": row[0],
+                                "Total": int(row[1]),
+                                "Pembayaran": int(row[2]),
+                                "Kembalian": int(row[3]),
+                                "Metode": row[4],
+                                "Tanggal": transaction_date
+                        })
+                        elif period == "monthly" and transaction_date.month == datetime.today().month:
+                            transactions.append({
+                                "Nama": row[0],
+                                "Total": int(row[1]),
+                                "Pembayaran": int(row[2]),
+                                "Kembalian": int(row[3]),
+                                "Metode": row[4],
+                                "Tanggal": transaction_date
+                        })
+                        elif period is None:
+                            transactions.append({
+                                "Nama": row[0],
+                                "Total": int(row[1]),
+                                "Pembayaran": int(row[2]),
+                                "Kembalian": int(row[3]),
+                                "Metode": row[4],
+                                "Tanggal": transaction_date
+                            })
         except Exception as e:
             print(f"Error membaca file transaksi: {e}")
+        transactions.sort(key=lambda x: x["Tanggal"], reverse=True)
         return transactions
 
     def refresh_app(self):
@@ -495,7 +534,7 @@ class VendingMachineUI(QWidget):
         self.update_cart_table()  # Memperbarui tampilan tabel setelah dihapus
 
     def process_purchase(self):
-        """Memproses pembelian"""
+        """Memproses pembelian dan mencatat transaksi"""
         try:
             money = int(self.money_input.text())
         except ValueError:
@@ -508,20 +547,11 @@ class VendingMachineUI(QWidget):
         else:
             change = money - total
             payment_method = self.payment_combo.currentText()
-            self.logic.record_transaction(total, money, change, payment_method)
-            
-            # Menampilkan pesan transaksi berhasil dengan tombol kustom
-            msg_box = QMessageBox(self)
-            msg_box.setWindowTitle("Transaksi Berhasil")
-            msg_box.setText(f"Transaksi berhasil. Kembalian: Rp {change}.")
-            
-            # Menambahkan tombol kustom
-            ok_button = QPushButton("Selesai")  # Ganti teks tombol
-            msg_box.addButton(ok_button, QMessageBox.AcceptRole)
-            
-            # Menampilkan dialog
-            msg_box.exec_()
-            self.clear_cart()
+            self.logic.record_transaction(total, money, change, payment_method)  # Catat transaksi
+
+            # Tampilkan pesan sukses
+            QMessageBox.information(self, "Sukses", f"Transaksi berhasil. Kembalian: Rp {change}.")
+            self.clear_cart()  # Kosongkan keranjang
 
     def clear_cart(self):
         """Menghapus isi keranjang"""
@@ -531,4 +561,5 @@ class VendingMachineUI(QWidget):
     def close_application(self):
         """Menutup aplikasi"""
         QApplication.quit()
+        
         
